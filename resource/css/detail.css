@@ -1,0 +1,23 @@
+/* CSS Document */
+.startLabel{
+	background-color: green;
+	padding: 5px 15px;
+	color: white;
+	font-weight: bold;
+}
+.stopLabel{
+	background-color: grey;
+	padding: 5px 15px;
+	color: white;
+	font-weight: bold;
+}
+.deleteLabel{
+	text-decoration: line-through;
+}
+.rightDetail{float:right;display:inline;}
+.rightDetail{
+	font-size: 14px;
+	font-family: "宋体";
+	color:#616161;
+	text-decoration: none;
+	line-height: 20px;

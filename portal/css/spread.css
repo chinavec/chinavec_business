@@ -1,0 +1,33 @@
+/* CSS Document */
+.tips{
+	font-size:14px;
+	color:#666;
+	}
+.button{
+	
+	}
+form{
+	/*color:#FFFFFF;*/
+	font-size:16px;
+	
+	}
+p{
+	margin-top:10px;
+	font-size:16px;
+	line-height:160%;
+	}
+li{
+	font-size:16px;
+	}
+.change{ 
+	width:100%; 
+	height:850px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f6f6f8,endColorStr=#b8c4cb); /*IE*/ 
+	background:-moz-linear-gradient(top,#f6f6f8,#b8c4cb);/*火狐*/ 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#f6f6f8), to(#b8c4cb));/*谷歌*/ 
+} 
+.biaoti1{
+	font-size:17px;
+	font-weight:600;
+	
+	}

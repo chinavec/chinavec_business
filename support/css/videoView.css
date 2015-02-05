@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+
+#searchInput{float:right;margin-top:30px;margin-right:100px;margin-bottom:10px;padding:0;display:inline;}
+#searchInput .search{background-image:url(../../img/lan.jpg);height:22px; border:none;width:50px;font-size:14px;
+font-family: "微软雅黑";color: #ffffff;font-weight: bold;}
+.rtf span{display:block;width:150px;}

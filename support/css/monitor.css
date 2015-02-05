@@ -1,0 +1,81 @@
+.inner{
+    width:98%;
+    margin:20px auto;
+}
+.panel, .panelws{
+    position: relative;
+    border: solid 1px #CCC;
+	margin:15px 0;
+	background: url(../img/loader.gif) no-repeat center;
+}
+.midpanel{
+    height: 300px;
+}
+.allowdel{
+    overflow: hidden;
+}
+.option{
+	position: absolute;
+	z-index: 999;
+	top:-10px; left:10px;
+	padding:2px 12px;
+	font-size: 18px;
+	background-color: #FFF;
+	color:#555;
+	line-height:1em;
+}
+.chart{
+	margin:15px 10px 0 10px;
+}
+.hastable{
+    margin:15px auto 25px auto;
+}
+.hastable table{
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 14px;
+    border-top: dotted 1px #CCC;
+    width:100%;
+}
+.hastable table tr{
+    line-height: 2.5em;
+    border-bottom: dotted 1px #CCC;
+}
+.hastable table tr.last{
+    border-bottom: none;
+}
+.hastable table .key{
+    width: 140px;
+    text-align: center;
+    background-color: #EEE;
+    color:#666;
+    font-weight: bold;
+}
+.hastable table .val{
+    padding-left:10px;
+}
+
+#CPUBasic{
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#CPUBasic span{
+    border-bottom: dotted 1px #888;
+    margin-right: 15px;
+}
+.table td.tc, .table th.tc{
+    text-align: center;
+}
+.table th.tc{
+    background-color: #EEE;
+    font-size: 16px;
+    color: #666;
+}
+.table td.tc{
+    line-height:6em;
+}
+.txt{
+    color:#2576B3;
+    font-size: 30px;
+}

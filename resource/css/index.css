@@ -1,0 +1,109 @@
+/* CSS Document */
+#sysinfo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+}
+#sysinfo span{
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: #F90;
+	color: #FFF;
+	font-weight: bold;
+}
+#title{
+	background: url(../img/add.png) left no-repeat;
+}
+/* CSS Document */
+.mytable{
+	border-collapse: collapse;
+	margin-left:10%;
+	margin-top:10px;
+}
+.mytable thead th{
+	text-align: center;
+	height: 30px;
+}
+
+/*.mytable tbody td{
+	text-align: center;
+	height: 35px;
+	line-height: 35px;
+	background-color: #F0F0F0;
+	border: 1px solid #999;
+}*/
+.ctable{
+	border-collapse: collapse;
+	margin-top:10px;
+}
+.ctable thead th{
+	text-align: center;
+	background: url(../img/bm.jpg);
+	font-size: 14px;
+	font-family: "宋体";
+	color: #727272;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 30px;
+}
+.ctable tbody td{
+	font-size: 14px;
+	font-family: "宋体";
+	color: #727272;
+	text-decoration: none;
+	line-height: 30px;
+	text-align: center;
+}
+.mytitle{
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	padding-left: 40px;
+	font-weight: bold;
+	border-bottom: 1px solid #666;
+	margin: 5px;
+}
+.rightIndex table td{
+	font-size: 14px;
+	font-family: "宋体";
+	color:#616161;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 30px;
+}
+.rightIndex {float:right;display:inline;}
+.rightIndex table th{
+	font-size: 10px;
+	color: #727272;
+	text-decoration: none;
+	line-height: 20px;
+}
+.page{
+	margin-top: 10px;
+	height: 30px;
+	text-align: center;
+}
+.page .cur{
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: bold;
+	height: 20px;
+}
+.mybutton{
+	height: 20px;
+	line-height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	/*background: url(../img/btn_bg.png) repeat-x;
+	border: 1px solid #BFBFBF;*/
+	color: #000;
+}
+.sysinfo{
+	font-size: 14px;
+	font-style: italic;
+	color: #333;
+}
+
+

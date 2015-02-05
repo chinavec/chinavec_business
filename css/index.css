@@ -1,0 +1,108 @@
+/* CSS Document */
+.leftbox{
+	border: 1px solid #868686;
+	background-color: #FFF;
+	margin-top: 15px;
+}
+.box_top_color{
+	height: 10px;
+	line-height: 10px;
+	width: 70px;
+}
+.leftbox .cat{
+	font-size: 14px;
+	font-weight:bold;
+	padding-left: 10px;
+	height: 25px;
+	line-height: 25px;
+}
+.media_list li{
+	float: left;
+	display: inline;
+	margin: 10px 0 15px 15px;
+}
+.media_list li h3.media_title{
+	font-size: 12px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 20px;
+	width: 162px;
+	overflow: hidden;
+}
+.media_list li p.media_abstract{
+	font-size: 12px;
+	color: #999;
+	font-style: italic;
+	height: 20px;
+	line-height: 20px;
+}
+.media_list li .media_rate{
+	margin-left: 20px;
+}
+.media_list .media_cover{
+	position: relative;
+}
+.media_list .media_info{
+	position: absolute;
+	width: 162px;
+	height: 20px;
+	line-height: 20px;
+	background: url(../img/cover_info_hover.png) repeat-x;
+	left: 0;
+	bottom: 0;
+}
+.media_list .media_info span{
+	padding-left: 10px;
+	color: #FFF;
+}
+.media_list .media_info a{
+	position: absolute;
+	right: 10px;
+	top: 3px;
+}
+.rightbox{
+	border: 1px solid #868686;
+	background-color: #F9F9F9;
+	margin-top: 15px;
+	padding: 0 10px;
+}
+.rightbox_title{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #666;
+	background: url(../img/right_box_title_squre.png) left center no-repeat;
+	padding-left: 15px;
+}
+.rightbox ul li{
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px dashed #D5D5D5;
+	padding: 0 5px;
+	position: relative;
+}
+#excellent li span.score{
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#hot li span.times{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#hot li span.sort{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px;
+	margin-right: 5px;
+}
+#hot li span.hot{
+	background-color: #F76546;
+	color: #FFF;
+}

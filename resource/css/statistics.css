@@ -1,0 +1,24 @@
+/* CSS Document */
+#title{
+	background: url(../img/stats.png) left no-repeat;
+}
+.caption{
+	text-align: center;
+	font-size: 14px;
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+}
+.mytable thead th, .mytable tbody td{
+	height: 18px;
+	line-height: 18px;
+}
+.proportion{
+	width: 1%;
+	height: 10px;
+	line-height: 10px;
+	background-color: #CBDEE7;
+	float: left;
+}
+
+

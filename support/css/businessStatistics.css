@@ -1,0 +1,7 @@
+/* CSS Document */
+#title{background: url(../img/stats.png) left no-repeat;}
+.caption{color:#00305C;text-align: center;font-size: 14px;line-height: 30px;font-weight: bold;}
+.mytable thead th, .mytable tbody td{height: 18px;line-height: 18px;border: 1px solid #999;}
+.proportion{width: 1%;height: 10px;line-height: 10px;background-color: #CBDEE7;float: left;}
+.totalFee{color:#00305C;text-align:center;font-size:14px;line-height:30px;}
+

@@ -1,0 +1,65 @@
+/* CSS Document */
+.warning{
+	font-size:14px;
+	color:#999999;
+	margin:5px 0 0 50px;
+	}
+.mediaList{
+	margin-bottom:20px;
+	}
+.posterV{
+	width:170px;
+	height:210px;
+	float:left;
+	margin:0 0 0 20px;
+	}
+.poster{
+	width:150px;
+	height:210px;
+	float:left;
+	}
+.mediaInfo{
+	float:left;
+	/*border-color:#999999;
+	border-collapse:collapse;
+	border-style:solid;
+	border-width:thin;
+	*/
+	width:500px;
+	height:210px;
+	margin-left:30px;
+	border-radius:3px;
+	}
+.mediaTitle{
+	font-size:16px;
+	color:#AAA;
+	font-weight:300;
+	font-style:!important;
+	}
+
+.buttonGreen{
+	background-color:#518900;
+	color:#FFFFFF;
+	font-family:微软雅黑;
+	border-radius:3px;
+	width:80px;
+	height:35px;
+	BORDER-LEFT: #518900 1px solid;/*左边框*/
+	BORDER-RIGHT: #518900 1px solid;/*右边框*/
+	BORDER-TOP: #518900 1px solid;/*上边框*/
+	BORDER-BOTTOM: #518900 1px solid;/*下边框*/
+	PADDING-LEFT: 2px;/*左间隙*/
+	PADDING-RIGHT: 2px; /*右间隙*/
+	PADDING-TOP: 2px;/*上间隙*/
+	PADDING-BOTTOM: 2px;/*下间隙*/
+	FONT-SIZE: 16px;/*字号*/
+	CURSOR: pointer;/*光标类型*/
+	}
+
+
+
+
+
+
+
+

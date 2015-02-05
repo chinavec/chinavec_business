@@ -1,0 +1,121 @@
+/* CSS Document */
+@charset "utf-8";
+body, html {width:100%;height:100%;margin:0;padding:0}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,table,td,th,img{margin:0;padding:0;border:0;}
+ul,ol{list-style-type:none;}
+li{list-style:none;}
+body {
+	text-align:center;
+	background: url(../img/background2.jpg) repeat 0px 1px;
+}
+a:visited  {color:#000000;text-decoration:none;}
+a:link {color:#000000;text-decoration:none;}
+a:active {color:#0FF; text-decoration:none;}
+.change{ 
+	/*背景图颜色渐变*/
+	width:100%; 
+	height:600px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#f6f6f8,endColorStr=#b8c4cb); /*IE*/ 
+	background:-moz-linear-gradient(top,#f6f6f8,#b8c4cb);/*火狐*/ 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#f6f6f8), to(#b8c4cb));/*谷歌*/ 
+} 
+.pageNum{
+	color:#000000;
+	font-size:14px;
+}
+
+#layout{ 
+	width:970px;
+	margin:0 auto;
+	text-decoration:none; 
+	font-family:"微软雅黑"; 
+	font-size:18px; 
+	text-align:left !important; 
+	text-align:center; 
+}
+#layout1{ 
+	width:1100px;
+	text-decoration:none; 
+	font-family:"微软雅黑"; 
+	font-size:18px; 
+	text-align:left !important; 
+	text-align:center; 
+}
+.searchBlock{
+	width:250px; 
+	height:30px;
+	 border-color:#518900;
+	  border-style:double;
+	}
+.searchButton{
+	background-color:#518900;
+	color:#FFFFFF;
+	width: 60px; 
+	height: 35px;
+	border-radius:2px;
+	border:0px;
+	font-size:14px;
+	font-weight:500;
+	CURSOR: pointer;/*光标类型*/
+	}
+.filterButton{
+	background-color:#f60;
+	color:#FFFFFF;
+	width: 130px; 
+	height: 35px;
+	border-radius:2px;
+	border:0px;
+	font-size:16px;
+	font-weight:800;
+	margin-right:90px;
+	CURSOR: pointer;/*光标类型*/
+	}
+.gray15{
+	font-size:15px;
+	color:#999999;
+	font-weight:100;
+	}
+.black12{
+	font-size:12px;
+	color:#;
+	font-weight:100;
+	}
+.gray12{
+	font-size:12px;
+	color:#999999;
+	font-weight:150;
+	}
+.black14{
+	font-size:14px;
+	color:#;
+	font-weight:200;
+	line-height:25px;
+	}
+.gray14{
+	font-size:14px;
+	color:#999999;
+	font-weight:250;
+	line-height:25px;
+	}
+.orange16{
+	font-size:16px;
+	font-weight:600;
+	background-color:#CCCCCC;
+	width:96%;
+	padding-top:6px;
+	height:30px;
+	color:#EB6100;
+	margin:10px 0 25px 20px;
+	}
+.p_half{
+	display: inline-block;
+    width: 49%;
+}
+.p_half a:hover{
+	color:#f60;
+	background-color:#f3edc2
+	}
+.select a:hover{
+	color:#f60;
+	background-color:#f3edc2
+	}
