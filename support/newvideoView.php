@@ -25,40 +25,62 @@ $offset = ($page - 1) * $pageSize;
 //若$q为空，读取表的全部信息；若$q不为空，读取和$q匹配的相关信息
 if($q == ''){
 	//读取数据表video_view_statistics
-	$sqlCount = "SELECT COUNT(DISTINCT(`video_view_statistics`.`video_id`)) FROM `video_view_statistics`
+	/*$sqlCount = "SELECT COUNT(DISTINCT(`video_view_statistics`.`video_id`)) FROM `video_view_statistics`
+				JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id`";*/
+	$sqlCount = "SELECT COUNT(DISTINCT(`video_view_statistics`.`video_id`)),`video_view_statistics`.`view_total` FROM `video_view_statistics`
 				JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id`";
-	$sql = "SELECT `video_type`.`name`,`video`.`title_cn`,`video`.`tags`,
+	/*$sql = "SELECT `video_type`.`name`,`video`.`title_cn`,`video`.`tags`,
 			COUNT(`video_view_statistics`.`view_total`) as `total`
 			FROM `video_view_statistics`
 			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 
 			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id`
 			GROUP BY `video_view_statistics`.`video_id`
-			ORDER BY `total` DESC LIMIT $offset, $pageSize";
+			ORDER BY `total` DESC LIMIT $offset, $pageSize";*/
+	$sql = "SELECT `video_type`.`name`,`video`.`title_cn`,`video`.`tags`,
+			sum(`video_view_statistics`.`view_total`) as `view_total`
+			FROM `video_view_statistics`
+			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 
+			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id`
+			GROUP BY `video_view_statistics`.`video_id`
+			ORDER BY `view_total` DESC LIMIT $offset, $pageSize";
+
 }else{
-	$sqlCount = "SELECT COUNT(DISTINCT(`video_view_statistics`.`video_id`)) FROM `video_view_statistics`
+	$sqlCount = "SELECT COUNT(DISTINCT(`video_view_statistics`.`video_id`)),`video_view_statistics`.`view_total` FROM `video_view_statistics`
 				 JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id`
 				 WHERE `video`.`title_cn` LIKE '%$q%'
 				";
 	$sql = "SELECT `video_type`.`name`,`video`.`title_cn`,`video`.`tags`,
-			COUNT(`video_view_statistics`.`view_total`) as `total` 
+			sum(`video_view_statistics`.`view_total`) as `view_total`
 			FROM `video_view_statistics`
 			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 		
 			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id`
 			WHERE `video_type`.`name` LIKE '%$q%' OR `video`.`title_cn` LIKE '%$q%'
 			GROUP BY `video_view_statistics`.`video_id`
-			ORDER BY `total` DESC LIMIT $offset, $pageSize";
+			ORDER BY `view_total` DESC LIMIT $offset, $pageSize";
 }
 $year=Date("Y")-1;
-$sqltype = "SELECT COUNT(`video_view_statistics`.`view_total`) as `total` 
+/*$sqltype = "SELECT COUNT(`video_view_statistics`.`view_total`) as `total` 
+			FROM `video_view_statistics`
+			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 		
+			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id`
+			GROUP BY `video_type`.`id` order by `video_type`.`id` DESC";*/
+/*$sqly = "SELECT COUNT(`video_view_statistics`.`view_total`) as `total` 
+			FROM `video_view_statistics`
+			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 		
+			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id` WHERE `video`.`year` IN($year+1,$year,$year-1,$year-2,$year-3,$year-4,$year-5,$year-6,$year-7,$year-8)
+			GROUP BY `video`.`year` order by `video`.`year` DESC";*/
+$sqltype = "SELECT COUNT(`video_view_statistics`.`type_id`) AS `total`
 			FROM `video_view_statistics`
 			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 		
 			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id`
 			GROUP BY `video_type`.`id` order by `video_type`.`id` DESC";
-$sqly = "SELECT COUNT(`video_view_statistics`.`view_total`) as `total` 
+
+$sqly = "SELECT `video`.`year`, COUNT(DISTINCT(`video_view_statistics`.`video_id`)) AS `total`
 			FROM `video_view_statistics`
 			JOIN `video` ON `video`.`id` = `video_view_statistics`.`video_id` 		
-			LEFT JOIN `video_type` ON `video_type`.`id` = `video_view_statistics`.`type_id` WHERE `video`.`year` IN($year+1,$year,$year-1,$year-2,$year-3,$year-4,$year-5,$year-6,$year-7,$year-8)
+			WHERE `video`.`year` IN($year+1,$year,$year-1,$year-2,$year-3,$year-4,$year-5,$year-6,$year-7,$year-8)
 			GROUP BY `video`.`year` order by `video`.`year` DESC";
+
 //$resulty= $db->select($sqly);
 //$resultype= $db->select($sqltype);
  $res_type = mysql_query($sqltype);
@@ -71,8 +93,10 @@ $sqly = "SELECT COUNT(`video_view_statistics`.`view_total`) as `total`
 	//echo $type_arr[1];
 	$res_year = mysql_query($sqly);
  $year_arr = array();
+ $years = array();
 	while($row_year = mysql_fetch_array($res_year)){
 		$year_arr[] = $row_year['total'];
+		$years[] = $row_year['year'];
 		//echo $type;
 	}
 	//echo $year_arr[0];
@@ -83,6 +107,7 @@ $videoViewRank = $db->select($sql);
 $basicURL = 'newvideoView.php?q='.$q;
 //页码信息
 $pageInfo = $u->page($db->count($sqlCount), $page, $pageSize);
+
 //关闭数据库
 $db->close();
 ?>
@@ -136,9 +161,9 @@ $db->close();
 				type: 'pie',
 				name: '视频发行年份占比',
 				data: [
-					['<?php echo $year+1;?>',<?php echo  $year_arr[0];?>],
+					['<?php echo $years[0];?>',<?php echo  $year_arr[0];?>],
 					{
-						name: '<?php echo $year;?>',
+						name: '<?php echo $years[1];?>',
 						y:  <?php echo  $year_arr[1];?>,
 						sliced: true,
 						selected: true
@@ -263,7 +288,7 @@ $db->close();
 						<td width="30%" align="center" valign="middle" class="font-hui"><?php echo $item->title_cn;?></td>
                         <td width="18%" align="center" valign="middle" class="font-hui"><?php  echo $item->tags;?></td>
                         <td width="18%" align="center" valign="middle" class="font-hui"><?php echo $item->name;?></td>
-                        <td width="18%" align="center" valign="middle" class="font-hui"><?php echo $item->total;?></td>
+                        <td width="18%" align="center" valign="middle" class="font-hui"><?php echo $item->view_total;?></td>
                         <td width="16%" align="center" valign="middle" class="font-hui"><?php echo ($key+1) + (($page-1) * $pageSize);?></td>
 					</tr>
                 <?php endforeach;?>
